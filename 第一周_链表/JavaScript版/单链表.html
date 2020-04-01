@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>单链表</title>
+</head>
+<body>
+    
+</body>
+<script>
+    class Node {
+        constructor (element) { //节点
+            this.element = element;
+            this.next = null;
+        }
+    }
+
+    class SingleLinkedList {
+        constructor () { //存放链表的头节点地址
+            this.head = null;
+        }
+
+        append (element) { //尾插法添加节点
+            let node = new Node(element), //建新节点
+                pre;
+            if(!this.head) { //链表为空
+                this.head = node; //更新头节点
+            } else {
+                pre = this.head; //去头节点，开始遍历
+                while(pre.next) { //找到链表的最后一个节点
+                    pre = pre.next;
+                }
+                pre.next = node; //添加链表
+            }
+            console.log('Append successfully');
+        }
+
+        insert (oldNode, newNode) { //将newNode插到oldNode后
+            if(!oldNode || !newNode) return false; //节点不存在即失败
+            newNode.next = oldNode.next;
+            oldNode.next = newNode; //修改next地址
+            return true;
+        }
+
+        addNode (element) { //新建一个数据为element的节点，返回新节点地址
+            let node = new Node(element);
+            return node;
+        }
+
+        deleteNode (node) { //删除node后第一个节点并返回其值
+            if(!node || !node.next) return null; //失败返回空
+            let i;
+            i = node.next; //i为node后第一个节点
+            node.next = i.next;
+            return i.element;
+        }
+
+        printList () { //输出链表
+            let p, l;
+            p = this.head;
+            l = 1;
+            while(p) {
+                console.log(`第${l}个节点为`);
+                console.log(p);
+                l ++;
+                p = p.next;
+            }
+        }
+        
+        search (element) { //找到数据为element的第一个节点地址
+            let p;
+            p = this.head;
+            while(p) { //p从头节点开始遍历  若头节点为空，则直接跳过while
+                if(p.element === element) break; //找到返回节点地址
+                p = p.next;
+            }
+            return p; //若遍历完还无，p为null
+        }
+
+        reverseList () { //将链表反转
+            let p, q;
+            q = this.head;
+            if(!q || !q.next) return true; //若链表为空 或 只有一个节点 不需要反转，直接返回成功
+            p = q.next;
+            q.next = null; //头节点只剩一个节点
+            while(p) { //遍历剩余链表，头插法依次插入链表
+                q = p.next;
+                p.next = this.head;
+                this.head = p;
+                p = q;
+            }
+            return true;
+        }
+
+        isLoop () { //判断是否成环
+            let quick, slow; //设置快慢指针
+            quick = slow = this.head;
+            while(quick.next && quick.next.next) {
+                slow = slow.next; //慢指针走一步
+                quick = quick.next.next; //快指针走两步
+                if(quick === slow) return true; //能相遇便是环
+            }
+            return false;
+        }
+
+        reverseEven () { //奇偶节点调换
+            let oddd, evee, pre;
+            pre = this.head;
+            while(pre.next && pre.next.next) { //剩余节点至少两个
+                if(pre === this.head) oddd = this.head;
+                else oddd = pre.next;
+                evee = oddd.next; //奇偶指针归位
+
+                oddd.next = evee.next;
+                if(pre === this.head) this.head = evee;
+                else oddd.next = evee;
+                evee.next = oddd; //奇偶交换
+
+                pre = oddd; //pre归位
+            }
+            return true;
+        }
+
+        findMid () { //查询中点节点
+            let quick, slow; //设置快慢指针
+            quick = slow = this.head; 
+            while(quick && quick.next) { //当快指针走到尾时，慢指针便到了中间
+                slow = slow.next;
+                quick = quick.next.next;
+            }
+            return slow;
+        }
+    }
+
+    let list = new SingleLinkedList();
+    let data;
+    console.log("1.测试输入");
+    list.append(10);
+    list.append("会被删除");
+    list.append({10: [2]});    
+    list.append([3]);
+    list.printList();
+    console.log("2.测试反转");
+    list.reverseList();
+    list.printList();
+    console.log("3.测试插入");
+    list.insert(list.search("输入内容"),list.addNode("插入新节点"));
+    list.printList();
+    console.log("4.测试删除");
+    data = list.deleteNode(list.search("会被删除"));
+    console.log(`返回值为${data}`);
+    list.printList();
+    console.log("5.测试奇偶交换");
+    list.reverseEven();
+    list.printList();
+    console.log("6.查询中点");
+    console.log(`中点值为：`);
+    console.log(list.findMid());
+</script>
+</html>
