@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>双向链表</title>
+</head>
+<body>
+    
+</body>
+<script>
+    class DuNode {
+        constructor(element) {
+            this.element = element;
+            this.next = null;
+            this.prior = null;
+        }
+    }
+
+    class DuLinkedList {
+        constructor () { //存放链表的头节点地址
+            this.head = null;
+        }
+
+        append (element) {  //头插法插入节点
+            let node = new DuNode(element),
+                pre;
+            if(!this.head) { //若链表为空
+                this.head = node;
+                return true;
+            }
+            pre = this.head; //若链表有节点
+            node.next = pre;
+            pre.prior = node;
+            this.head = node; //更新头节点
+            return true;
+        }
+
+        insertBefore (oldDuNode, newDuNode) { //将newDuNode插到oldDuNode前
+            if(!oldDuNode || !newDuNode) return false;
+            newDuNode.next = oldDuNode; //new更新不影响old储存的地址，所以先赋值
+            newDuNode.prior = oldDuNode.prior; //若为空则赋值为空
+            oldDuNode.prior = newDuNode; //此时所有地址都储存在new上了，可以放心修改old
+            if(this.head === oldDuNode) { //若old为头节点则不存在newDuNode.prior.next
+                this.head = newDuNode; //更新头节点
+            } else {
+                newDuNode.prior.next = newDuNode; //更新地址
+            }
+            return true;
+        }
+
+        insertAfter (oldDuNode, newDuNode) { //将newDuNode插到oldDuNode后
+            if(!oldDuNode || !newDuNode) return false;
+            newDuNode.prior = oldDuNode;
+            newDuNode.next = oldDuNode.next; //new更新不影响old储存的地址，所以先赋值
+            oldDuNode.next = newDuNode; //此时所有地址都储存在new上了，可以放心修改old
+            if(!newDuNode.next) newDuNode.next.prior = newDuNode; //若old为最后一个节点，则不存在newDuNode.next.prior
+        }
+
+        delete (node) { //删除node后第一个节点并返回其值
+            if(!node || !node.next) return false;
+            let i;
+            i = node.next; //i为下一个节点
+            node.next = i.next;
+            if(i.next) i.next.prior = node;
+            return i.element;
+        }
+
+        addDuNode (element) { //新建一个数据为element的节点，返回新节点地址
+            let node = new DuNode(element);
+            return node;
+        }
+
+        printList () { //输出链表(单链表双向链表通用)
+            let p, l;
+            p = this.head;
+            l = 1;
+            while(p) {
+                console.log(`第${l}个节点为`);
+                console.log(p);
+                l ++;
+                p = p.next;
+            }
+        }
+
+        search (element) { //找到数据为element的第一个节点地址(单链表双向链表通用)
+            let p;
+            p = this.head;
+            while(p) { //p从头节点开始遍历  若头节点为空，则直接跳过while
+                if(p.element === element) break; //找到返回节点地址
+                p = p.next;
+            }
+            return p; //若遍历完还无，p为null
+        }
+    }
+
+    let list = new DuLinkedList();
+    let data;
+    console.log("1.测试输入");
+    list.append(10);
+    list.append("会被删除");
+    list.append({10: [2]});   
+    list.append("插入测试点"); 
+    list.append([3]); 
+    list.printList();
+    console.log("2.测试向前插入");
+    list.insertBefore(list.search("插入测试点"),list.addDuNode("向前插入新节点"));
+    list.printList();
+    console.log("3.测试向后插入");
+    list.insertAfter(list.search("插入测试点"),list.addDuNode("向后插入新节点"));
+    list.printList();
+    console.log("4.测试删除(会被删除)");
+    data = list.delete(list.search("会被删除"));
+    console.log(`返回值为${data}`);
+    list.printList();
+</script>
+</html>
