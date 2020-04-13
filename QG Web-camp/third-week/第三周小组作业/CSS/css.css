@@ -1,0 +1,141 @@
+* {
+    margin: 0 auto;
+    padding: 0;
+    color: white;
+    outline: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    background-image: url("../images/1.jpg");
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.main {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.main > div {
+    width: 320px;
+    overflow: hidden;
+}
+
+.photo {
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.photo img {
+    width: 100%;
+    background-position: 50% 50%;
+}
+
+.inputs > input /* ,
+.yzm */{
+    width: 100%;
+    height: 42px;
+    line-height: 42px;
+    margin-top: 20px;
+    background-color: rgba(255, 255, 255, .7);
+    border: none;
+    color: rgb(117, 117, 117);
+    font-size: 20px;
+    padding-left: 10px;
+    font-weight: 500;
+    vertical-align: middle;
+}
+
+/* .yzm > input {
+    width: 200px;
+    border: none;
+    color: rgb(117, 117, 117);
+    font-size: 20px;
+    background-color: transparent;
+    float: left;
+    height: 100%;
+}
+
+.yzm span {
+    float: right;
+    padding-right: 20px;
+    font-size: 16px;
+    color: gray;
+} */
+
+.txt {
+    margin: 10px 0; 
+}
+
+.reg {
+    float: right;  
+}
+
+.had {
+    float: right;
+    font-size: 12px;
+    width: 100%;
+    padding: 5px 0;
+}
+
+.login {
+    background-color: rgba(85, 111, 181, .7);
+    border: none;
+    width: 100%;
+    height: 50px;
+    font-size: 20px;
+    border-radius: 3px;
+    border: 1px solid rgba(255, 255, 255, .1);
+}
+
+.col {
+    background-color: rgb(85, 111, 181) !important;
+}
+
+.login:checked {
+    border: none;
+}
+
+.else {
+    width: 100%;
+}
+
+.else > div{
+    width: 100%;
+    height: 20px;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.else span {
+    height: 40px;
+    line-height: 40px;
+    margin: 0 auto;
+    padding: 0 10px;
+    font-size: 12px;
+    background-color: transparent;
+    text-align: center;
+}
+
+.else svg {
+    padding: 0 15px;
+}
+
+.svgs {
+    text-align: center;
+    border: none !important;
+}
