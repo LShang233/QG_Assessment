@@ -15,6 +15,36 @@ function login() {
 }
 login();
 
+//登录
+function issuccesslogin() {
+    //获取内容
+    let logininput = document.getElementById("logininput");
+    data = logininput.getElementsByTagName("input");
+    //获取按钮
+    let loginbuttom = document.getElementById("loginbuttom");
+    
+    loginbuttom.onclick = function () {
+        //登录
+        $ajax({
+            method: "post",
+            url: "http://recruit.qgailab.com/ajax/login",
+            data: {
+                username: data[0].value,
+                password: data[1].value,
+            },
+            success: function (result) {
+                //alert(result);
+                var obj = JSON.parse(result);
+                alert(obj.message);
+            },
+            error: function (msg) {
+                alert(msg);
+            }
+        })
+    }
+}
+issuccesslogin();
+
 //注册页面判断与上传
 function issuccess() {
     //获取input数据
@@ -42,7 +72,7 @@ function issuccess() {
         closeeye.setAttribute("src", "images//img.jpg");
     }
 
-    data[3].onclick = function() {
+    data[3].onclick = function () {
         let closeeye = document.getElementById("closeeye");
         closeeye.setAttribute("src", "images//img2.png");
     }
@@ -59,7 +89,26 @@ function issuccess() {
                             alert("请同意《xxx协议》！");
                         else {
                             //上传
-                            alert("succ");
+                            $ajax({
+                                method: "post",
+                                url: "http://recruit.qgailab.com/ajax/register",
+                                data: {
+                                    //username为手机号
+                                    username: data[1].value,
+                                    password: data[3].value,
+                                    phone: data[1].value,
+                                    email: data[2].value,
+                                    name: data[0].value
+                                },
+                                success: function (result) {
+                                    //alert(result);
+                                    var obj = JSON.parse(result);
+                                    alert(obj.message);
+                                },
+                                error: function (msg) {
+                                    alert(msg);
+                                }
+                            })
                         }
         }
 
@@ -83,11 +132,11 @@ function regis() {
 }
 
 function ispassword(password) {
-    var num = /^.{6,18}$/;
+    var num = /^.{8,16}$/;
     if (!num.test(password)) {
-        alert("请输入6-18位的密码！");
+        alert("请输入8-16位的密码！");
     } else {
-        num = /^[0-9a-zA-Z_]{6,18}$/ig;
+        num = /^[0-9a-zA-Z_]{8,16}$/ig;
         if (!num.test(password)) {
             alert("非法字符输入！\n只能输入数字、英文字符以及‘_’");
         } else {
