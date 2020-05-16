@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的相册</title>
+    <link rel="stylesheet" href="CSS/header.css">
+    <link rel="stylesheet" href="CSS/main.css">
+</head>
+
+<body class="theme-day">
+    <!-- 添加图片 -->
+    <div class="new-article" id="new-photo">
+        <svg viewBox="0 0 16 13">
+            <g transform="translate(1.000000, 0.000000)" fill="white">
+                <path
+                    d="M10.164,11.063 C9.982,11.063 9.845,10.991 9.776,10.922 L8.009,9.157 L6.314,10.852 C6.248,10.918 6.095,10.998 5.891,10.998 C5.738,10.998 5.507,10.952 5.288,10.733 C5.067,10.513 5.018,10.295 5.017,10.153 C5.013,9.965 5.086,9.823 5.157,9.753 L6.881,8.028 L5.201,6.35 C5.049,6.197 4.922,5.723 5.321,5.325 C5.546,5.1 5.767,5.053 5.914,5.053 C6.097,5.053 6.234,5.125 6.301,5.194 L8.009,6.9 L9.705,5.204 C9.773,5.137 9.925,5.058 10.129,5.058 C10.283,5.058 10.514,5.104 10.733,5.324 C11.111,5.703 11.035,6.134 10.864,6.304 L9.138,8.03 L10.875,9.766 C10.942,9.834 11.021,9.986 11.021,10.19 C11.021,10.344 10.976,10.573 10.756,10.792 C10.531,11.016 10.311,11.063 10.164,11.063 L10.164,11.063 L10.164,11.063 Z">
+                </path>
+            </g>
+        </svg>
+    </div>
+    <!-- 上传 -->
+    <div class="addPDiv hidden">
+        <form action="uploadHandleServlet" enctype="multipart/form-data" method="POST" class="addPhoto">
+            <div>
+                <svg viewBox="0 0 16 13" id="closeAP">
+                    <g transform="translate(1.000000, 0.000000)" fill="white">
+                        <path
+                            d="M10.164,11.063 C9.982,11.063 9.845,10.991 9.776,10.922 L8.009,9.157 L6.314,10.852 C6.248,10.918 6.095,10.998 5.891,10.998 C5.738,10.998 5.507,10.952 5.288,10.733 C5.067,10.513 5.018,10.295 5.017,10.153 C5.013,9.965 5.086,9.823 5.157,9.753 L6.881,8.028 L5.201,6.35 C5.049,6.197 4.922,5.723 5.321,5.325 C5.546,5.1 5.767,5.053 5.914,5.053 C6.097,5.053 6.234,5.125 6.301,5.194 L8.009,6.9 L9.705,5.204 C9.773,5.137 9.925,5.058 10.129,5.058 C10.283,5.058 10.514,5.104 10.733,5.324 C11.111,5.703 11.035,6.134 10.864,6.304 L9.138,8.03 L10.875,9.766 C10.942,9.834 11.021,9.986 11.021,10.19 C11.021,10.344 10.976,10.573 10.756,10.792 C10.531,11.016 10.311,11.063 10.164,11.063 L10.164,11.063 L10.164,11.063 Z">
+                        </path>
+                    </g>
+                </svg>
+            </div>
+
+            <input type="number" name="id" id="pID" class="hidden">
+            <input type="file" name="file1" id="file">
+            <input type="file" name="file2" id="file2" class="hidden">
+            <input type="submit" value="上传" id="submit">
+        </form>
+    </div>
+
+
+    <!-- 主页面 -->
+    <div class="main">
+        <!-- 轮播图 -->
+        <div class="banner" id="banner">
+            <ul class="banner-ul"></ul>
+            <div class="banner-prev">
+                <svg viewBox="0 0 17 16">
+                    <g stroke="none" stroke-width="1" fill="white" fill-rule="evenodd">
+                        <path
+                            d="M10.978,1.162 C10.978,1.387 10.916,1.612 10.782,1.812 L6.626,8.041 L10.823,14.078 C11.182,14.619 11.036,15.348 10.495,15.707 C9.956,16.068 9.224,15.922 8.865,15.382 L4.235,8.694 C3.971,8.3 3.969,7.786 4.233,7.39 L8.822,0.51 C9.182,-0.032 9.914,-0.178 10.454,0.181 C10.795,0.409 10.978,0.782 10.978,1.162 L10.978,1.162 Z">
+                        </path>
+                    </g>
+                </svg>
+            </div>
+            <div class="banner-next">
+                <svg viewBox="0 0 17 16">
+                    <g stroke="none" stroke-width="1" fill="white" fill-rule="evenodd">
+                        <path
+                            d="M6.077,1.162 C6.077,1.387 6.139,1.612 6.273,1.812 L10.429,8.041 L6.232,14.078 C5.873,14.619 6.019,15.348 6.56,15.707 C7.099,16.068 7.831,15.922 8.19,15.382 L12.82,8.694 C13.084,8.3 13.086,7.786 12.822,7.39 L8.233,0.51 C7.873,-0.032 7.141,-0.178 6.601,0.181 C6.26,0.409 6.077,0.782 6.077,1.162 L6.077,1.162 Z">
+                        </path>
+                    </g>
+
+                </svg>
+            </div>
+        </div>
+
+        <!-- 相册 -->
+        <h1 class="albums-h1">我的相册</h1>
+        <!-- 相册图片 -->
+        <div id="albums-main"></div>
+
+    </div>
+
+    <!-- 放大查看 -->
+    <section class="see-photo hidden">
+        <div class="see-div">
+            <img src="images/loading.jpg">
+        </div>
+    </section>
+
+</body>
+<script src="JS/ajax.js"></script>
+<script src="JS/header.js"></script>
+<script src="JS/theme.js"></script>
+<script src="JS/banner.js"></script>
+
+</html>

@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="QGSpace:war">
+    <output-path>$PROJECT_DIR$/../QGSpace/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>QGSpace</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="QGSpace.war">
+      <element id="artifact" artifact-name="QGSpace:war exploded" />
+    </root>
+  </artifact>
+</component>

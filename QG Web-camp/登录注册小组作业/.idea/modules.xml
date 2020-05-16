@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../QGSpace/QGSpace.iml" filepath="$PROJECT_DIR$/../QGSpace/QGSpace.iml" />
+      <module fileurl="file://$PROJECT_DIR$/QGhomeword.iml" filepath="$PROJECT_DIR$/QGhomeword.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../QGspace.iml" filepath="$PROJECT_DIR$/../QGspace.iml" />
+    </modules>
+  </component>
+</project>

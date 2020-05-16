@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的日志</title>
+    <link rel="stylesheet" href="CSS/header.css">
+    <link rel="stylesheet" href="CSS/main.css">
+
+</head>
+
+<body class="theme-day">
+    <div class="new-article" id="new-article">
+        <svg viewBox="0 0 16 13">
+            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <g transform="translate(1.000000, 0.000000)" fill="white">
+                    <path
+                        d="M10.164,11.063 C9.982,11.063 9.845,10.991 9.776,10.922 L8.009,9.157 L6.314,10.852 C6.248,10.918 6.095,10.998 5.891,10.998 C5.738,10.998 5.507,10.952 5.288,10.733 C5.067,10.513 5.018,10.295 5.017,10.153 C5.013,9.965 5.086,9.823 5.157,9.753 L6.881,8.028 L5.201,6.35 C5.049,6.197 4.922,5.723 5.321,5.325 C5.546,5.1 5.767,5.053 5.914,5.053 C6.097,5.053 6.234,5.125 6.301,5.194 L8.009,6.9 L9.705,5.204 C9.773,5.137 9.925,5.058 10.129,5.058 C10.283,5.058 10.514,5.104 10.733,5.324 C11.111,5.703 11.035,6.134 10.864,6.304 L9.138,8.03 L10.875,9.766 C10.942,9.834 11.021,9.986 11.021,10.19 C11.021,10.344 10.976,10.573 10.756,10.792 C10.531,11.016 10.311,11.063 10.164,11.063 L10.164,11.063 L10.164,11.063 Z">
+                    </path>
+                </g>
+            </g>
+        </svg>
+    </div>
+
+    <div class="main shadow">
+        <div id="articles">
+            <article class="article">
+                <header class="article-header">
+                    <h1>
+                        <p class="article-title">点击右上角添加第一篇文章</p>
+                    </h1>
+                    <a>此处为日期</a>
+                </header>
+
+                <div class="article-body article-close">
+                    <p>点击右上角添加第一篇文章</p>
+                </div>
+                <a class="article-more">more&gt;&gt;</a>
+                <div class="article-tags">
+                    <svg viewBox="0 0 17 16">
+                        <g stroke="none" stroke-width="1" fill-rule="evenodd">
+                            <path d="M5.546,15.951 C5.037,16.46 5.031,10.969 5.031,10.969 C5.031,10.969 -0.462,10.962 0.0480000001,10.453 L10.061,0.439 C10.569,-0.069 11.418,-0.045 11.957,0.492 L15.507,4.043 C16.046,4.582 16.068,5.431 15.561,5.939 L5.546,15.951 L5.546,15.951 Z">
+                            </path>
+                        </g>
+                    </svg>
+                    <ul class="article-tag">
+                    <li><a href="#">标签</a></li></ul>
+                    <span class="article-change" style="color: grey;">编辑</span>
+                </div>
+            </article>
+
+        </div>
+    </div>
+
+    <section class="search">
+        <div>
+            <div class="search-input">
+                <input type="text" id="search-input" placeholder="请输入……">
+                <svg viewBox="0 0 17 16" class="search-svg">
+                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <g transform="translate(1.000000, 0.000000)" fill="white">
+                            <path
+                                d="M16,5.954 C16,2.665 13.317,0 10.009,0 C6.698,0 4.016,2.665 4.016,5.954 C4.016,9.241 6.699,11.906 10.009,11.906 C13.317,11.906 16,9.241 16,5.954 L16,5.954 Z M4.934,6.019 C4.934,3.213 7.213,0.943 10.026,0.943 C12.837,0.943 15.114,3.214 15.114,6.019 C15.114,8.823 12.837,11.094 10.026,11.094 C7.213,11.094 4.934,8.822 4.934,6.019 L4.934,6.019 Z">
+                            </path>
+                            <path
+                                d="M1.822,15.964 L0,14.142 L4.037,10.104 C4.037,10.104 4.133,10.869 4.617,11.351 C5.099,11.835 5.859,11.927 5.859,11.927 L1.822,15.964 L1.822,15.964 Z">
+                            </path>
+                            <path
+                                d="M13.398,5.073 C13.398,5.645 13.838,5.429 13.838,4.634 C13.838,3.264 12.729,2.154 11.359,2.154 C10.562,2.154 10.347,2.593 10.92,2.593 C12.29,2.593 13.398,3.704 13.398,5.073 L13.398,5.073 Z">
+                            </path>
+                        </g>
+                    </g>
+
+                </svg>
+            </div>
+            <div class="search-tags">
+                <div class="article-tags">
+                    <svg viewBox="0 0 17 16">
+                        <g stroke="none" stroke-width="1" fill-rule="evenodd">
+                            <path
+                                d="M5.546,15.951 C5.037,16.46 5.031,10.969 5.031,10.969 C5.031,10.969 -0.462,10.962 0.0480000001,10.453 L10.061,0.439 C10.569,-0.069 11.418,-0.045 11.957,0.492 L15.507,4.043 C16.046,4.582 16.068,5.431 15.561,5.939 L5.546,15.951 L5.546,15.951 Z">
+                            </path>
+                        </g>
+                    </svg>
+                    <ul class="article-tag">
+                        <li><a href="#">标签</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="search-articles">
+                <ul class="search-article">
+                    <li>
+                        <div class="search-title">点击右上角添加第一篇文章</div>
+                        <div class="search-article-tags">
+                        <div class="search-day">此处为日期</div>
+                            <svg viewBox="0 0 17 16">
+                                <g stroke="none" stroke-width="1" fill="white" fill-rule="evenodd">
+                                    <path d="M5.546,15.951 C5.037,16.46 5.031,10.969 5.031,10.969 C5.031,10.969 -0.462,10.962 0.0480000001,10.453 L10.061,0.439 C10.569,-0.069 11.418,-0.045 11.957,0.492 L15.507,4.043 C16.046,4.582 16.068,5.431 15.561,5.939 L5.546,15.951 L5.546,15.951 Z">
+                                    </path>
+                                </g>
+                            </svg><span class="search-article-tag">标签</span> </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+</body>
+<script src="JS/ajax.js"></script>
+<script src="JS/header.js"></script>
+<script src="JS/theme.js"></script>
+<script src="JS/diary.js"></script>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    
+</head>
+
+<body>
+    
+<div class="div2">
+    <p>sss</p>
+    <p>sssss</p>
+    <p>sssssss</p>
+</div>
+
+    
+</body>
+<script>
+    var div2 = document.querySelector(".div2");
+  div2.insertAdjacentHTML("beforebegin","<p>111hello world</p>");//在调用元素外部前面添加一个元素
+  div2.insertAdjacentHTML("afterbegin","<p>222hello world</p>");//在调用元素的内部添加一个子元素并取代了第一个子元素
+  div2.insertAdjacentHTML("beforeend","<p>333hello world</p>");//在调用元素内部后面添加一个子元素 即取代了最后的子元素
+  div2.insertAdjacentHTML("afterend","<p>444hello world</p>");//在调用元素的外部后面添加一个元素
+
+  div2.insertAdjacentHTML("afterbegin","<p>222333hello world</p>");//在调用元素的内部添加一个子元素并取代了第一个子元素
+</script>
+</html>

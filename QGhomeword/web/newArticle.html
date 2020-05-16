@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的主页</title>
+    <link rel="stylesheet" href="CSS/header.css">
+    <link rel="stylesheet" href="CSS/main.css">
+</head>
+
+<body class="theme-day">
+    <div class="main">
+        <!-- 文章id -->
+        <p class="hidden article-id"></p>
+        <div class="newAritcle">
+            <!-- 标题 -->
+            <div class="newAritcle-title" contenteditable="true" placeholder="文章标题"></div>
+            <!-- 正文 -->
+            <div class="newAritcle-word" contenteditable="true" placeholder="在此输入内容……"></div>
+
+            <div class="article-tags new-tag">
+                <!-- 标签 -->
+                <input type="text" class="newAritcle-tag" placeholder="请输入标签，每个标签使用中文逗号隔开  如：标签1，标签2 ">
+                <!-- 上传 -->
+                <input type="submit" value="上传" class="newAritcle-submit">
+                <!-- 删除 -->
+                <input type="submit" value="删除日志" class="newAritcle-distroy">
+            </div>
+
+        </div>
+    </div>
+</body>
+<script src="JS/ajax.js"></script>
+<script src="JS/header.js"></script>
+<script src="JS/theme.js"></script>
+<script src="JS/addArticle.js"></script>
+
+</html>

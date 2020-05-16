@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册</title>
+    <link rel="stylesheet" href="CSS/css.css">
+</head>
+
+<body>
+    <div class="main">
+        <div>
+            <div id="registered">
+                <div class="photo"><img src="images/img.jpg" id="closeeye"></div>
+
+                <h1>个人空间</h1>
+
+                <div class="inputs" id="zhuce">
+                    <input placeholder="用户名" name="name">
+                    <input placeholder="手机号" id="phone" name="phone">
+                    <input placeholder="邮箱" name="email">
+                    <input type="password" placeholder="密码" id="password" name="password">
+                    <div class="yzm">
+                        <input placeholder="验证码" id="checkCode" name="checkCode">
+                        <img id="codeImg" src="CheckCodeServlet">
+                    </div>
+                </div>
+
+                <div class="txt">
+                    <!-- <input type="checkbox" id="agree"> 我已同意《xxx协议》 -->
+                    <div id="tips"></div>
+                    <div class="reg">
+                        <span>已有账户 | </span>
+                        <a href="login.html" id="log">登录</a>
+                    </div>
+                </div>
+
+                <input type="submit" value="注  册" class="login col" id="registere">
+
+            </div>
+
+        </div>
+
+    </div>
+</body>
+<script src="JS/ajax.js"></script>
+<script src="JS/theme.js"></script>
+<script src="JS/register.js"></script>
+</html>
